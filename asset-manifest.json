@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/RentACar/static/css/main.ec59d59b.css",
-    "main.js": "/RentACar/static/js/main.bec7f7a6.js",
+    "main.js": "/RentACar/static/js/main.e269e5e3.js",
+    "static/media/car-bgc-2.jpg": "/RentACar/static/media/car-bgc-2.365ce75bbd1d99c1af82.jpg",
     "static/media/car-icon.svg": "/RentACar/static/media/car-icon.77a6afe7aaaada6ea4fcd49d08ad113f.svg",
     "index.html": "/RentACar/index.html",
     "main.ec59d59b.css.map": "/RentACar/static/css/main.ec59d59b.css.map",
-    "main.bec7f7a6.js.map": "/RentACar/static/js/main.bec7f7a6.js.map"
+    "main.e269e5e3.js.map": "/RentACar/static/js/main.e269e5e3.js.map"
   },
   "entrypoints": [
     "static/css/main.ec59d59b.css",
-    "static/js/main.bec7f7a6.js"
+    "static/js/main.e269e5e3.js"
   ]
 }
