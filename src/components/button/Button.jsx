@@ -1,10 +1,12 @@
-import React from 'react';
-import { ButonLoadMore } from './Button.styled';
+import React from "react";
+import { ButonLoadMore } from "./Button.styled";
 
-export function Button({ onFindMore }) {
+function Button({ onFindMore }) {
   return (
     <ButonLoadMore onClick={onFindMore} type="button">
       Load more
     </ButonLoadMore>
   );
 }
+
+export default Button;
