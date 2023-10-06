@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import fetchAdverts from "../../Api/fetchAdverts";
 import { AdvertsList } from "./Catalog.styled";
 import AdvertItem from "../AdvertItem/AdvertItem";
-import Button from "../Button/Button";
+import ButtonLoad from "../ButtonLoad/ButtonLoad";
 
 function Catalog() {
   const [adverts, setAdverts] = useState([]);
@@ -33,7 +33,7 @@ function Catalog() {
               return <AdvertItem key={advert.id} advert={advert} />;
             })}
           </AdvertsList>
-          <Button onFindMore={onFindMore} />
+          <ButtonLoad onFindMore={onFindMore} />
         </>
       )}
     </>
