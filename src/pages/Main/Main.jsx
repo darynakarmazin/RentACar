@@ -1,5 +1,4 @@
 import { Container, HeroContainer, HeroContent } from "./Main.styled";
-import CarImg from "./../../img/rent-a-car.webp";
 
 function Main() {
   return (
