@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/RentACar/static/css/main.ec59d59b.css",
-    "main.js": "/RentACar/static/js/main.0bb45ddc.js",
+    "main.js": "/RentACar/static/js/main.319a6150.js",
     "index.html": "/RentACar/index.html",
     "main.ec59d59b.css.map": "/RentACar/static/css/main.ec59d59b.css.map",
-    "main.0bb45ddc.js.map": "/RentACar/static/js/main.0bb45ddc.js.map"
+    "main.319a6150.js.map": "/RentACar/static/js/main.319a6150.js.map"
   },
   "entrypoints": [
     "static/css/main.ec59d59b.css",
-    "static/js/main.0bb45ddc.js"
+    "static/js/main.319a6150.js"
   ]
 }
