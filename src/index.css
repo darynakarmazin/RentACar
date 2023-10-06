@@ -1,13 +1,96 @@
+@import-normalize; /* bring in normalize.css styles */
+:root {
+  /* Font colors */
+  --color-primary-white: #ffffff;
+  --color-primary-gray: #b6b6b6;
+
+  /* Background colors */
+  --color-primary-black: #050505;
+  --color-primary-green-lite: #e3ffa8;
+
+  /* Secondary */
+  --color-secondary-gray-1: #292928;
+  --color-secondary-pink: #ffc4f7;
+  --color-secondary-yellow: #fff3b7;
+
+  /* Fonts */
+  --main-font: "Poppins", sans-serif;
+
+  /* Animation */
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+.hidden-element {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/* MOBILE */
+
+.container {
+  width: 320px;
+  padding-left: 23px;
+  padding-right: 23px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TABLET */
+@media screen and (min-width: 834px) {
+  .container {
+    width: 834px;
+    padding-left: 128px;
+    padding-right: 128px;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 128px;
+    padding-right: 128px;
+  }
 }
