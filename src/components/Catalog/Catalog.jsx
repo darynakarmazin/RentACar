@@ -2,26 +2,39 @@ import { useEffect, useState } from "react";
 import fetchAdverts from "../../Api/fetchAdverts";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import { AdvertsList } from "./Catalog.styled";
+import { Button } from "../button/Button";
 
 function Catalog() {
-  const [adverts, setAdverts] = useState("");
+  const [adverts, setAdverts] = useState([]);
+  const [page, setPage] = useState(1);
+
+  const onFindMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
 
   useEffect(() => {
-    fetchAdverts()
+    getAdverts(page);
+  }, [page]);
+
+  const getAdverts = (page) => {
+    fetchAdverts(page)
       .then((results) => {
-        setAdverts(results);
+        setAdverts((prevAdverts) => [...prevAdverts, ...results]);
       })
       .catch((err) => console.error("error:" + err));
-  }, []);
+  };
 
   return (
     <>
       {adverts && (
-        <AdvertsList>
-          {adverts.map((advert) => {
-            return <AdvertItem key={advert.id} advert={advert} />;
-          })}
-        </AdvertsList>
+        <>
+          <AdvertsList>
+            {adverts.map((advert) => {
+              return <AdvertItem key={advert.id} advert={advert} />;
+            })}
+          </AdvertsList>
+          <Button onFindMore={onFindMore} />
+        </>
       )}
     </>
   );
