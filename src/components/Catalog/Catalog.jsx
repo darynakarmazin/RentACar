@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import fetchAdverts from "../../Api/fetchAdverts";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import { AdvertsList } from "./Catalog.styled";
-import Button from "../Button/Button";
+import Button from "./../Button/Button";
 
 function Catalog() {
   const [adverts, setAdverts] = useState([]);
