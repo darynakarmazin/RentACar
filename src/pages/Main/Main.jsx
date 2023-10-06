@@ -1,4 +1,5 @@
 import { Container, HeroContainer, HeroContent } from "./Main.styled";
+import CarImg from "./../../img/rent-a-car.webp";
 
 function Main() {
   return (
@@ -14,9 +15,14 @@ function Main() {
                 access to a diverse fleet of vehicles.
               </p>
               <p>
-                Discover RentACar, your gateway to convenient car rental
-                services in Ukraine. Streamline your vehicle selection process
-                with our intuitive application.
+                With our intuitive platform, you can effortlessly browse and
+                select from a wide range of cars, ensuring a hassle-free rental
+                experience.
+              </p>
+              <p>
+                Discover RentACar as your go-to solution for convenient car
+                rental services in Ukraine, simplifying the process from start
+                to finish.
               </p>
             </HeroContent>
           </Container>

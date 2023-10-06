@@ -7,7 +7,7 @@ function Layout() {
     <div>
       <Header className="container">
         <LogoNavLink to="/">
-          <img src={LogoImg} alt="Car logo" width={40} /> RentACar
+          <img src={LogoImg} alt="Car logo" width={60} /> RentACar
         </LogoNavLink>
         <NavigationLinks>
           <NavLink to="/catalog">Catalog</NavLink>
