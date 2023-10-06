@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import bgImg from "./../../img/car-bgc-2.jpg";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+`;
+
 export const HeroContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: row-reverse;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.1)
