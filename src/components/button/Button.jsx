@@ -1,4 +1,3 @@
-import React from "react";
 import { ButonLoadMore } from "./Button.styled";
 
 function Button({ onFindMore }) {

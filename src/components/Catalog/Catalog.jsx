@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import fetchAdverts from "../../Api/fetchAdverts";
-import AdvertItem from "../AdvertItem/AdvertItem";
 import { AdvertsList } from "./Catalog.styled";
+import AdvertItem from "../AdvertItem/AdvertItem";
 import Button from "../Button/Button";
 
 function Catalog() {
