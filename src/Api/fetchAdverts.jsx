@@ -4,7 +4,7 @@ const limit = 8;
 
 async function fetchAdverts(page) {
   try {
-    const res = await axios.get(`/adverts/?limit=${limit}&page=${page}`);
+    const res = await axios.get(`/adverts?limit=${limit}&page=${page}`);
     return res.data;
   } catch (error) {
     console.error(error);
