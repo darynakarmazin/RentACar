@@ -4,9 +4,18 @@ import {
   CarImage,
   CarInfo,
   CarTitle,
+  CarWrapper,
   CardLi,
+  Favoritebutton,
   LearnButton,
 } from "./AdvertItem.styled";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../redux/favorite/favoriteSlice";
+import iconAdd from "./../../img/heart-yes.svg";
+import iconRemove from "./../../img/heart-no.svg";
 
 function AdvertItem({ advert }) {
   const [openModal, setOpenModal] = useState(false);
@@ -23,10 +32,32 @@ function AdvertItem({ advert }) {
     setOpenModal(false);
   };
 
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorite.items);
+
+  const toggleFavorite = () => {
+    const isFavorite = favorites.some((favorite) => favorite.id === advert.id);
+
+    if (isFavorite) {
+      dispatch(removeFromFavorites(advert));
+    } else {
+      dispatch(addToFavorites(advert));
+    }
+  };
+
   return (
     <>
       <CardLi>
-        <CarImage src={advert.img} alt="car img" height={268} />
+        <CarWrapper>
+          <Favoritebutton onClick={toggleFavorite}>
+            {favorites.some((favorite) => favorite.id === advert.id) ? (
+              <img src={iconAdd} alt="icon add" />
+            ) : (
+              <img src={iconRemove} alt="icon remove" />
+            )}
+          </Favoritebutton>
+          <CarImage src={advert.img} alt="car img" height={268} />
+        </CarWrapper>
         <div>
           <CarTitle>
             <h2>

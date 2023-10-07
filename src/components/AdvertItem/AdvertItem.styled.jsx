@@ -7,10 +7,27 @@ export const CardLi = styled.li`
   height: 426px;
 `;
 
+export const CarWrapper = styled.div`
+  position: relative;
+  border-radius: 12px;
+  background: rgba(18, 20, 23, 0.1);
+  width: 274px;
+  height: 268px;
+`;
+
+export const Favoritebutton = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+`;
+
 export const CarImage = styled.img`
   border-radius: 12px;
   object-fit: cover;
   overflow: hidden;
+  width: 274px;
+  height: 268px;
   margin-bottom: 14px;
 `;
 

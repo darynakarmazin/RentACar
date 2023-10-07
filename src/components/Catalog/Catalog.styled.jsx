@@ -7,5 +7,5 @@ export const AdvertsList = styled.ul`
   column-gap: 29px;
   row-gap: 50px;
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  margin: 50px 0 100px;
 `;
