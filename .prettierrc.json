@@ -1,0 +1,18 @@
+{
+  "printWidth": 160,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "singleAttributePerLine": false,
+  "bracketSameLine": true,
+  "arrowParens": "avoid",
+
+  "overrides": [
+    {
+      "files": ["*.json", "*.yml"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}
