@@ -13,6 +13,7 @@ export const CarWrapper = styled.div`
   background: rgba(18, 20, 23, 0.1);
   width: 274px;
   height: 268px;
+  margin-bottom: 14px;
 `;
 
 export const Favoritebutton = styled.button`
@@ -28,7 +29,6 @@ export const CarImage = styled.img`
   overflow: hidden;
   width: 274px;
   height: 268px;
-  margin-bottom: 14px;
 `;
 
 export const CarTitle = styled.div`
