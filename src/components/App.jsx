@@ -9,8 +9,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Main />} />
-        <Route path="catalog" element={<CatalogPage />} />
-        <Route path="favorites" element={<Favorites />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
