@@ -20,8 +20,14 @@ function Modal({ closeModal, advert }) {
   const city = address[address.length - 2];
   const country = address[address.length - 1];
 
+  const handleOverlyClick = (e) => {
+    if (e.currentTarget === e.target) {
+      closeModal();
+    }
+  };
+
   return (
-    <Overlay>
+    <Overlay onClick={handleOverlyClick}>
       <ModalContainer>
         <CloseButton onClick={closeModal}>
           <img src={crossImg} alt="cancel" />

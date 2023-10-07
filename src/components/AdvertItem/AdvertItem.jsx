@@ -32,6 +32,14 @@ function AdvertItem({ advert }) {
     setOpenModal(false);
   };
 
+  const handleOnClose = (e) => {
+    if (e.code === "Escape") {
+      closeModalHendler();
+    }
+  };
+
+  window.addEventListener("keydown", handleOnClose);
+
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorite.items);
 
