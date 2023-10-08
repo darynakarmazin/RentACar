@@ -5,5 +5,5 @@ export const FavouritesContainer = styled.div`
 `;
 
 export const AdvertsContainer = styled.div`
-  max-width: 75%;
+  width: 938px;
 `;

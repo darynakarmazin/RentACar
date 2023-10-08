@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
-import fetchAdverts from "../../Api/fetchAdverts";
 import { AdvertsList } from "./Catalog.styled";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import ButtonLoad from "../ButtonLoad/ButtonLoad";
+import { useDispatch, useSelector } from "react-redux";
+import { onNextPage } from "../../redux/catalog/catalogSlice";
+import fetchAdverts from "../../Api/fetchAdverts";
 
 function Catalog() {
+  const dispatch = useDispatch();
+
+  const page = useSelector((state) => state.catalog.page);
   const [adverts, setAdverts] = useState([]);
-  const [page, setPage] = useState(1);
 
   const onFindMore = () => {
-    setPage((prevPage) => prevPage + 1);
+    dispatch(onNextPage());
   };
 
   useEffect(() => {

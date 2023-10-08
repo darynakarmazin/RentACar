@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import AdvertItem from "../../components/AdvertItem/AdvertItem";
-import Filter from "../../components/Filter/Filter";
 import { AdvertsList } from "../../components/Catalog/Catalog.styled";
 import { AdvertsContainer, FavouritesContainer } from "./Favorites.styled";
 import fetchAdverts from "../../Api/fetchAdverts";
 import { useSelector } from "react-redux";
+import CarFilter from "../../components/CarFilter/CarFilter";
 
 function Favorites() {
   const [adverts, setAdverts] = useState([]);
@@ -34,7 +34,7 @@ function Favorites() {
           </AdvertsList>
         )}
       </AdvertsContainer>
-      <Filter />
+      <CarFilter />
     </FavouritesContainer>
   );
 }

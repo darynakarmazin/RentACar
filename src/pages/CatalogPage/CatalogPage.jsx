@@ -1,10 +1,10 @@
-import Filter from "../../components/Filter/Filter";
 import Catalog from "../../components/Catalog/Catalog";
+import CarFilter from "../../components/CarFilter/CarFilter";
 
 function CatalogPage() {
   return (
     <div className="container">
-      <Filter />
+      <CarFilter />
       <Catalog />
     </div>
   );

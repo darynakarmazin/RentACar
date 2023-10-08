@@ -1,4 +1,6 @@
+import { NavLink } from "react-router-dom";
 import { Container, HeroContainer, HeroContent } from "./Main.styled";
+import { NavigationLinks } from "../../components/Layout/Layout.styled";
 
 function Main() {
   return (
@@ -23,6 +25,10 @@ function Main() {
                 rental services in Ukraine, simplifying the process from start
                 to finish.
               </p>
+              <NavigationLinks>
+                <NavLink to="/catalog">Catalog</NavLink>
+                <NavLink to="/favorites">Favorites</NavLink>
+              </NavigationLinks>
             </HeroContent>
           </Container>
         </HeroContainer>
