@@ -73,15 +73,14 @@ export const CarInfo = styled.p`
   font-family: "Manrope", sans-serif;
   font-size: 12px;
   line-height: 1.5;
-  max-width: 277px;
-  margin-bottom: 14px;
 `;
 
-export const CarSescription = styled.p`
+export const CarDescription = styled.p`
   color: #121417;
   font-family: "Manrope", sans-serif;
   font-size: 14px;
   line-height: 1.43;
+  margin-top: 14px;
   margin-bottom: 24px;
 `;
 

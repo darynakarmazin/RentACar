@@ -73,13 +73,15 @@ function AdvertItem({ advert }) {
             </h2>
             <p>{advert.rentalPrice}</p>
           </CarTitle>
-
           <CarInfo>
-            {city} | {country} | {advert.rentalCompany} | Premium {advert.type}{" "}
-            |{advert.model} | {advert.mileage} | {advert.functionalities[0]}
+            {city}&ensp;|&ensp;{country}&ensp;|&ensp;{advert.rentalCompany}
+          </CarInfo>
+          <CarInfo>
+            {advert.type}&ensp;|&ensp;{advert.make}
+            &ensp;|&ensp;{Number(advert.mileage).toLocaleString("en")}
+            &ensp;|&ensp;{advert.accessories[0]}
           </CarInfo>
         </div>
-
         <LearnButton onClick={openModalHendler}>Learn more</LearnButton>
       </CardLi>
       {openModal && <Modal closeModal={closeModalHendler} advert={advert} />}

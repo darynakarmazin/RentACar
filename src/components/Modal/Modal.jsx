@@ -6,11 +6,11 @@ import {
   CarWrapper,
   CarTitle,
   CarInfo,
-  CarSescription,
   RentalBtn,
   SecondaryTitle,
   AccessoriesList,
   ConditionsList,
+  CarDescription,
 } from "./Modal.styled";
 import crossImg from "./../../img/x.svg";
 
@@ -42,11 +42,14 @@ function Modal({ closeModal, advert }) {
             </h2>
           </CarTitle>
           <CarInfo>
-            {city} | {country} | Id: {advert.id} | Year: {advert.year} | Type:{" "}
-            {advert.type} | Fuel Consumption: {advert.fuelConsumption} | Engine
-            Size: {advert.engineSize}
+            {city}&ensp;|&ensp;{country}&ensp;|&ensp;Id: {advert.id}
+            &ensp;|&ensp;Year: {advert.year}&ensp;|&ensp;Type: {advert.type}
           </CarInfo>
-          <CarSescription>{advert.description}</CarSescription>
+          <CarInfo>
+            Fuel Consumption: {advert.fuelConsumption}
+            &ensp;|&ensp;Engine Size: {advert.engineSize}
+          </CarInfo>
+          <CarDescription>{advert.description}</CarDescription>
           <SecondaryTitle>Accessories and functionalities:</SecondaryTitle>
           <AccessoriesList>
             {advert.functionalities.map((functionaliti) => {
@@ -55,9 +58,39 @@ function Modal({ closeModal, advert }) {
           </AccessoriesList>
           <SecondaryTitle>Rental Conditions: </SecondaryTitle>
           <ConditionsList>
-            {conditions.map((condition) => {
-              return <li>{condition}</li>;
+            {conditions.map((condition, index) => {
+              const characters = condition.split("");
+              return (
+                <li key={index}>
+                  {characters.map((char, charIndex) => {
+                    const isDigit = /^\d+$/.test(char);
+                    return (
+                      <span
+                        key={charIndex}
+                        style={{
+                          color: isDigit ? "#3470FF" : "#363535",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {char}
+                      </span>
+                    );
+                  })}
+                </li>
+              );
             })}
+            <li>
+              Mileage:{" "}
+              <span style={{ color: "#3470FF", fontWeight: 600 }}>
+                {Number(advert.mileage).toLocaleString("en")}
+              </span>
+            </li>
+            <li>
+              Price:{" "}
+              <span style={{ color: "#3470FF", fontWeight: 600 }}>
+                {advert.rentalPrice}
+              </span>
+            </li>
           </ConditionsList>
         </div>
         <RentalBtn href="tel:+380730000000">Rental car</RentalBtn>
