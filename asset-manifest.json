@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RentACar/static/css/main.6526e256.css",
-    "main.js": "/RentACar/static/js/main.273c9aa5.js",
+    "main.js": "/RentACar/static/js/main.74de46dc.js",
     "static/media/car-bgc-3.jpg": "/RentACar/static/media/car-bgc-3.545b71c10ef0d8906f6d.jpg",
     "static/media/car-icon.svg": "/RentACar/static/media/car-icon.77a6afe7aaaada6ea4fcd49d08ad113f.svg",
     "index.html": "/RentACar/index.html",
@@ -9,10 +9,10 @@
     "static/media/heart-yes.svg": "/RentACar/static/media/heart-yes.623a3b874365d724c658e79a860ad4a4.svg",
     "static/media/x.svg": "/RentACar/static/media/x.f3cbdd58dc25ca7cbb3d242106b56fb9.svg",
     "main.6526e256.css.map": "/RentACar/static/css/main.6526e256.css.map",
-    "main.273c9aa5.js.map": "/RentACar/static/js/main.273c9aa5.js.map"
+    "main.74de46dc.js.map": "/RentACar/static/js/main.74de46dc.js.map"
   },
   "entrypoints": [
     "static/css/main.6526e256.css",
-    "static/js/main.273c9aa5.js"
+    "static/js/main.74de46dc.js"
   ]
 }
