@@ -1,22 +1,11 @@
-@import-normalize; /* bring in normalize.css styles */
 :root {
-  /* Font colors */
-  --color-primary-white: #ffffff;
-  --color-primary-gray: #b6b6b6;
-
-  /* Background colors */
-  --color-primary-black: #050505;
-  --color-primary-green-lite: #e3ffa8;
-
-  /* Secondary */
-  --color-secondary-gray-1: #292928;
-  --color-secondary-pink: #ffc4f7;
-  --color-secondary-yellow: #fff3b7;
-
-  /* Fonts */
-  --main-font: "Poppins", sans-serif;
-
-  /* Animation */
+  --color-primary-text: #121417;
+  --color-secondary-text: rgba(18, 20, 23, 0.5);
+  --color-primary-accent: #3470ff;
+  --color-secondary-accent: #0b44cd;
+  --color-secondary-input: #f7f7fb;
+  --color-secondary-white: #ffffff;
+  --main-font: "Manrope", sans-serif;
   --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -26,12 +15,7 @@
 
 body {
   margin: 0;
-  font-family: "Manrope", sans-serif;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: var(--main-font);
 }
 
 h1,
