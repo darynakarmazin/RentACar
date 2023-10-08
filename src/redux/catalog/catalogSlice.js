@@ -7,8 +7,9 @@ const catalogSlice = createSlice({
     page: 1,
   },
   reducers: {
-    getAdverts: (state, action) => {
+    setAdverts: (state, action) => {
       state.adverts = [...state.adverts, ...action.payload];
+      // state.page = state.page + 1;
     },
     onNextPage: (state) => {
       state.page = state.page + 1;
@@ -16,5 +17,5 @@ const catalogSlice = createSlice({
   },
 });
 
-export const { getAdverts, onNextPage } = catalogSlice.actions;
+export const { setAdverts, onNextPage } = catalogSlice.actions;
 export default catalogSlice.reducer;

@@ -1,32 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AdvertsList } from "./Catalog.styled";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import ButtonLoad from "../ButtonLoad/ButtonLoad";
 import { useDispatch, useSelector } from "react-redux";
-import { onNextPage } from "../../redux/catalog/catalogSlice";
+import { onNextPage, setAdverts } from "../../redux/catalog/catalogSlice";
 import fetchAdverts from "../../Api/fetchAdverts";
 
 function Catalog() {
   const dispatch = useDispatch();
 
   const page = useSelector((state) => state.catalog.page);
-  const [adverts, setAdverts] = useState([]);
+  const adverts = useSelector((state) => state.catalog.adverts);
 
   const onFindMore = () => {
     dispatch(onNextPage());
-  };
-
-  useEffect(() => {
     getAdverts(page);
-  }, [page]);
+  };
 
   const getAdverts = (page) => {
     fetchAdverts(page)
       .then((results) => {
-        setAdverts((prevAdverts) => [...prevAdverts, ...results]);
+        dispatch(setAdverts(results));
       })
       .catch((err) => console.error("error:" + err));
   };
+
+  useEffect(() => {
+    if (adverts.length === 0) {
+      getAdverts(page);
+      dispatch(onNextPage());
+    }
+  }, []);
 
   return (
     <>
