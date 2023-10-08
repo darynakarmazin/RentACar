@@ -3,7 +3,11 @@ import { AdvertsList } from "./Catalog.styled";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import ButtonLoad from "../ButtonLoad/ButtonLoad";
 import { useDispatch, useSelector } from "react-redux";
-import { onNextPage, setAdverts } from "../../redux/catalog/catalogSlice";
+import {
+  onNextPage,
+  setAdverts,
+  firstAdverts,
+} from "../../redux/catalog/catalogSlice";
 import fetchAdverts from "../../Api/fetchAdverts";
 
 function Catalog() {
@@ -27,11 +31,11 @@ function Catalog() {
 
   useEffect(() => {
     if (adverts.length === 0) {
-      getAdverts(page);
-      dispatch(onNextPage());
+      fetchAdverts(page).then((results) => {
+        dispatch(firstAdverts(results));
+      });
     }
-  // eslint-disable-next-line
-  }, []);
+  }, [adverts.length, dispatch, page]);
 
   return (
     <>

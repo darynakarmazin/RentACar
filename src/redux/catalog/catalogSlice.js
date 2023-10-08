@@ -7,6 +7,10 @@ const catalogSlice = createSlice({
     page: 1,
   },
   reducers: {
+    firstAdverts: (state, action) => {
+      state.adverts = [...state.adverts, ...action.payload];
+      state.page = state.page + 1;
+    },
     setAdverts: (state, action) => {
       state.adverts = [...state.adverts, ...action.payload];
     },
@@ -16,5 +20,5 @@ const catalogSlice = createSlice({
   },
 });
 
-export const { setAdverts, onNextPage } = catalogSlice.actions;
+export const { setAdverts, onNextPage, firstAdverts } = catalogSlice.actions;
 export default catalogSlice.reducer;
