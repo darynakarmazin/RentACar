@@ -68,7 +68,7 @@ function Catalog() {
               })}
             </AdvertsList>
           ) : (
-            <div>No matching favorites found</div>
+            <div>No matching adverts found</div>
           )}
           <ButtonLoad onFindMore={onFindMore} />
         </>
