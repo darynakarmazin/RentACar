@@ -30,6 +30,7 @@ function Catalog() {
       getAdverts(page);
       dispatch(onNextPage());
     }
+  // eslint-disable-next-line
   }, []);
 
   return (
