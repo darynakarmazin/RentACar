@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import makes from "./makes.json";
 
-const CarFilter = ({ adverts }) => {
+const CarFilter = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
   const [minMileage, setMinMileage] = useState("");
@@ -10,25 +10,14 @@ const CarFilter = ({ adverts }) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const filteredAdverts = adverts.filter((advertisement) => {
-      if (selectedMake && advertisement.make !== selectedMake) {
-        return false;
-      }
-      if (
-        selectedPrice &&
-        parseInt(advertisement.rentalPrice.slice(1), 10) > Number(selectedPrice)
-      ) {
-        return false;
-      }
-      if (minMileage && advertisement.mileage < Number(minMileage)) {
-        return false;
-      }
-      if (maxMileage && advertisement.mileage > Number(maxMileage)) {
-        return false;
-      }
-      return true;
-    });
-    console.log("Filtered Advertisements:", filteredAdverts);
+    const filters = {
+      selectedMake,
+      selectedPrice,
+      minMileage,
+      maxMileage,
+    };
+
+    onFilterChange(filters);
   };
 
   return (

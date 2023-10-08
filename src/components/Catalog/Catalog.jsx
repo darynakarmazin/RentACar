@@ -15,6 +15,7 @@ function Catalog() {
 
   const page = useSelector((state) => state.catalog.page);
   const adverts = useSelector((state) => state.catalog.adverts);
+  const filters = useSelector((state) => state.catalog.filters);
 
   const onFindMore = () => {
     dispatch(onNextPage());
@@ -37,12 +38,33 @@ function Catalog() {
     }
   }, [adverts.length, dispatch, page]);
 
+  const filteredAdverts = adverts.filter((adverts) => {
+    if (filters.selectedMake && adverts.make !== filters.selectedMake) {
+      return false;
+    }
+    if (
+      filters.selectedPrice &&
+      parseInt(adverts.rentalPrice.slice(1), 10) > Number(filters.selectedPrice)
+    ) {
+      return false;
+    }
+    if (filters.minMileage && adverts.mileage < Number(filters.minMileage)) {
+      return false;
+    }
+    if (filters.maxMileage && adverts.mileage > Number(filters.maxMileage)) {
+      return false;
+    }
+    return true;
+  });
+
+  console.log(filteredAdverts);
+
   return (
     <>
       {adverts && (
         <>
           <AdvertsList>
-            {adverts.map((advert) => {
+            {filteredAdverts.map((advert) => {
               return <AdvertItem key={advert.id} advert={advert} />;
             })}
           </AdvertsList>
