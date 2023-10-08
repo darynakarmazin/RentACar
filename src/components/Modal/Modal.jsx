@@ -69,7 +69,7 @@ function Modal({ closeModal, advert }) {
                         key={charIndex}
                         style={{
                           color: isDigit ? "#3470FF" : "#363535",
-                          fontWeight: 600,
+                          fontWeight: isDigit ? 600 : 400,
                         }}
                       >
                         {char}
