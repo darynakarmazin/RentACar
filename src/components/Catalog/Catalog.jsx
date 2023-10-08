@@ -57,17 +57,19 @@ function Catalog() {
     return true;
   });
 
-  console.log(filteredAdverts);
-
   return (
     <>
       {adverts && (
         <>
-          <AdvertsList>
-            {filteredAdverts.map((advert) => {
-              return <AdvertItem key={advert.id} advert={advert} />;
-            })}
-          </AdvertsList>
+          {filteredAdverts.length > 0 ? (
+            <AdvertsList>
+              {filteredAdverts.map((advert) => {
+                return <AdvertItem key={advert.id} advert={advert} />;
+              })}
+            </AdvertsList>
+          ) : (
+            <div>No matching favorites found</div>
+          )}
           <ButtonLoad onFindMore={onFindMore} />
         </>
       )}

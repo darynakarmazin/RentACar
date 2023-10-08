@@ -11,6 +11,12 @@ const catalogSlice = createSlice({
       minMileage: "",
       maxMileage: "",
     },
+    filtersFavorite: {
+      selectedMake: "",
+      selectedPrice: "",
+      minMileage: "",
+      maxMileage: "",
+    },
   },
   reducers: {
     firstAdverts: (state, action) => {
@@ -29,9 +35,20 @@ const catalogSlice = createSlice({
         ...action.payload,
       };
     },
+    setFiltersFavorite: (state, action) => {
+      state.filtersFavorite = {
+        ...state.filtersFavorite,
+        ...action.payload,
+      };
+    },
   },
 });
 
-export const { setAdverts, onNextPage, firstAdverts, setFilters } =
-  catalogSlice.actions;
+export const {
+  setAdverts,
+  onNextPage,
+  firstAdverts,
+  setFilters,
+  setFiltersFavorite,
+} = catalogSlice.actions;
 export default catalogSlice.reducer;
