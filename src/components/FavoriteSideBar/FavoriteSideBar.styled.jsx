@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const FilterForm = styled.form`
   display: flex;
+  flex-direction: column;
   gap: 18px;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  margin: 50px 0 100px;
 `;
 
 export const SelectDiv = styled.div`
@@ -21,6 +23,7 @@ export const SelectDiv = styled.div`
     border-radius: 14px;
     background: #f7f7fb;
     display: flex;
+    width: 320px;
     padding: 14px 89px 14px 18px;
     justify-content: center;
     align-items: center;
@@ -68,6 +71,7 @@ export const SearchButton = styled.button`
   border-radius: 12px;
   background: #3470ff;
   padding: 14px 44px;
+  width: 320px;
   color: var(--White, #fff);
   font-family: "Manrope", sans-serif;
   font-size: 14px;

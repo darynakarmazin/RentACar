@@ -7,9 +7,9 @@ import {
   Label,
   SearchButton,
   SelectDiv,
-} from "./CarFilter.styled";
+} from "./FavoriteSideBar.styled";
 
-const CarFilter = ({ onFilterChange }) => {
+const FavoriteSideBar = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
   const [minMileage, setMinMileage] = useState("");
@@ -82,4 +82,4 @@ const CarFilter = ({ onFilterChange }) => {
   );
 };
 
-export default CarFilter;
+export default FavoriteSideBar;

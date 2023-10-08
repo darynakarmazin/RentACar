@@ -4,7 +4,7 @@ import AdvertItem from "../../components/AdvertItem/AdvertItem";
 import { AdvertsContainer, FavouritesContainer } from "./Favorites.styled";
 import { useSelector, useDispatch } from "react-redux";
 import { setFiltersFavorite } from "../../redux/catalog/catalogSlice";
-import CarFilter from "../../components/CarFilter/CarFilter";
+import FavoriteSideBar from "../../components/FavoriteSideBar/FavoriteSideBar";
 
 function Favorites() {
   const dispatch = useDispatch();
@@ -47,7 +47,7 @@ function Favorites() {
           <div>No matching favorites found</div>
         )}
       </AdvertsContainer>
-      <CarFilter onFilterChange={handleFilterChange} />
+      <FavoriteSideBar onFilterChange={handleFilterChange} />
     </FavouritesContainer>
   );
 }
