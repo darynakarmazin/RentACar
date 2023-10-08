@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/RentACar/static/css/main.6526e256.css",
+    "main.css": "/RentACar/static/css/main.c437e837.css",
     "main.js": "/RentACar/static/js/main.5ec21947.js",
     "static/media/car-bgc-3.jpg": "/RentACar/static/media/car-bgc-3.545b71c10ef0d8906f6d.jpg",
     "static/media/car-icon.svg": "/RentACar/static/media/car-icon.77a6afe7aaaada6ea4fcd49d08ad113f.svg",
@@ -8,11 +8,11 @@
     "static/media/heart-no.svg": "/RentACar/static/media/heart-no.ac060e771360fcc26ebb0c86173c8396.svg",
     "static/media/heart-yes.svg": "/RentACar/static/media/heart-yes.623a3b874365d724c658e79a860ad4a4.svg",
     "static/media/x.svg": "/RentACar/static/media/x.f3cbdd58dc25ca7cbb3d242106b56fb9.svg",
-    "main.6526e256.css.map": "/RentACar/static/css/main.6526e256.css.map",
+    "main.c437e837.css.map": "/RentACar/static/css/main.c437e837.css.map",
     "main.5ec21947.js.map": "/RentACar/static/js/main.5ec21947.js.map"
   },
   "entrypoints": [
-    "static/css/main.6526e256.css",
+    "static/css/main.c437e837.css",
     "static/js/main.5ec21947.js"
   ]
 }
