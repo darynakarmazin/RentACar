@@ -77,6 +77,11 @@ export const SearchButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
+
+  &:hover,
+  &:focus {
+    background: #0b44cd;
+  }
 `;
 
 export const Label = styled.label`

@@ -96,6 +96,11 @@ export const RentalBtn = styled.a`
   display: inline-block;
   margin-top: 24px;
   margin-top: auto;
+
+  &:hover,
+  &:focus {
+    background: #0b44cd;
+  }
 `;
 
 export const SecondaryTitle = styled.h3`

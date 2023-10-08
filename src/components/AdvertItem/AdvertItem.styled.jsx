@@ -83,4 +83,9 @@ export const LearnButton = styled.button`
   line-height: 1.43;
   margin-top: 28px;
   margin-top: auto;
+
+  &:hover,
+  &:focus {
+    background: #0b44cd;
+  }
 `;

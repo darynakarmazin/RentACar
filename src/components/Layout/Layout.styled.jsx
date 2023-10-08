@@ -35,6 +35,16 @@ export const NavigationLinks = styled.div`
     &.active {
       background: #3470ff;
       color: var(--White, #fff);
+
+      &:hover,
+      &:focus {
+        background: #0b44cd;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      border: 3px solid #0b44cd;
     }
   }
 `;
