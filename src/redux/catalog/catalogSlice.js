@@ -9,7 +9,6 @@ const catalogSlice = createSlice({
   reducers: {
     setAdverts: (state, action) => {
       state.adverts = [...state.adverts, ...action.payload];
-      // state.page = state.page + 1;
     },
     onNextPage: (state) => {
       state.page = state.page + 1;
