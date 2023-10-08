@@ -34,7 +34,7 @@ function Favorites() {
           </AdvertsList>
         )}
       </AdvertsContainer>
-      <CarFilter />
+      <CarFilter adverts={favorites} />
     </FavouritesContainer>
   );
 }

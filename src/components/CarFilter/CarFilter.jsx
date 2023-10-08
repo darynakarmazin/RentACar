@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import makes from "./makes.json";
-import { useSelector } from "react-redux";
 
-const CarFilter = () => {
+const CarFilter = ({ adverts }) => {
   const [selectedMake, setSelectedMake] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
   const [minMileage, setMinMileage] = useState("");
   const [maxMileage, setMaxMileage] = useState("");
 
-  const advertisements = useSelector((state) => state.catalog.adverts);
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const filteredAdvertisements = advertisements.filter((advertisement) => {
+    const filteredAdverts = adverts.filter((advertisement) => {
       if (selectedMake && advertisement.make !== selectedMake) {
         return false;
       }
-      if (selectedPrice && advertisement.pricePerHour > Number(selectedPrice)) {
+      if (
+        selectedPrice &&
+        parseInt(advertisement.rentalPrice.slice(1), 10) > Number(selectedPrice)
+      ) {
         return false;
       }
       if (minMileage && advertisement.mileage < Number(minMileage)) {
@@ -28,7 +28,7 @@ const CarFilter = () => {
       }
       return true;
     });
-    console.log("Filtered Advertisements:", filteredAdvertisements);
+    console.log("Filtered Advertisements:", filteredAdverts);
   };
 
   return (
