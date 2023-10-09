@@ -14,14 +14,11 @@ export const HeaderDiv = styled.div`
 `;
 
 export const LogoNavLink = styled(NavLink)`
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  color: #121417;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 1.11;
-  padding: 10px 0;
+  height: 90px;
+
+  img {
+    height: 90px;
+  }
 `;
 
 export const NavigationLinks = styled.div`
