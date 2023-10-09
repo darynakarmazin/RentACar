@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/RentACar/static/css/main.7f457bf4.css",
-    "main.js": "/RentACar/static/js/main.36993ad6.js",
+    "main.js": "/RentACar/static/js/main.b2fc29e2.js",
     "static/media/hero-img.jpg": "/RentACar/static/media/hero-img.3d42b55299cd2b5f1a5d.jpg",
     "static/media/log00.png": "/RentACar/static/media/log00.62cf0a6855a36714b345.png",
-    "static/media/placeholder.png": "/RentACar/static/media/placeholder.b6b1385dbbf9d4d8081c.png",
+    "static/media/placeholder-2.png": "/RentACar/static/media/placeholder-2.f76f1f65261aa7e6e1ab.png",
     "index.html": "/RentACar/index.html",
     "static/media/heart-no.svg": "/RentACar/static/media/heart-no.ac060e771360fcc26ebb0c86173c8396.svg",
     "static/media/heart-yes.svg": "/RentACar/static/media/heart-yes.623a3b874365d724c658e79a860ad4a4.svg",
     "static/media/x.svg": "/RentACar/static/media/x.f3cbdd58dc25ca7cbb3d242106b56fb9.svg",
     "main.7f457bf4.css.map": "/RentACar/static/css/main.7f457bf4.css.map",
-    "main.36993ad6.js.map": "/RentACar/static/js/main.36993ad6.js.map"
+    "main.b2fc29e2.js.map": "/RentACar/static/js/main.b2fc29e2.js.map"
   },
   "entrypoints": [
     "static/css/main.7f457bf4.css",
-    "static/js/main.36993ad6.js"
+    "static/js/main.b2fc29e2.js"
   ]
 }
