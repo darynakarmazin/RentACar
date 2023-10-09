@@ -34,8 +34,8 @@ export const CarWrapper = styled.div`
   border-radius: 14px;
   background: rgba(18, 20, 23, 0.1);
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
+      rgba(18, 20, 23, 0.2),
+      rgba(255, 255, 255, 0.6)
     ),
     url(${bgImg});
   background-size: cover;
