@@ -16,7 +16,7 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
-      width: "130px",
+      width: "136px",
       display: "block",
       border: "none",
       borderRadius: "14px",
@@ -27,6 +27,7 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
       fontSize: "18px",
       fontWeight: "500",
       lineHeight: "1.11",
+      paddingRight: "4px",
       svg: {
         color: "#121417",
       },
@@ -60,7 +61,7 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
     }),
     menuList: (provided) => ({
       ...provided,
-      width: "130px",
+      width: "136px",
       height: "188px",
       zIndex: 9999,
       display: "flex",

@@ -35,17 +35,6 @@ const CarFilter = ({ onFilterChange }) => {
       <FilterForm onSubmit={handleFormSubmit}>
         <SelectDiv>
           <Label>Car brand</Label>
-          {/* <select
-            value={selectedMake}
-            onChange={(e) => setSelectedMake(e.target.value)}
-          >
-            <option value="">Select a brand</option>
-            {makes.map((make, index) => (
-              <option key={index} value={make}>
-                {make}
-              </option>
-            ))}
-          </select> */}
           <MySelectMake
             selectedMake={selectedMake}
             setSelectedMake={setSelectedMake}
@@ -65,13 +54,19 @@ const CarFilter = ({ onFilterChange }) => {
             <InputLeft
               type="number"
               value={minMileage}
-              onChange={(e) => setMinMileage(e.target.value)}
+              onChange={(e) => {
+                const value = Math.max(e.target.value, 0);
+                setMinMileage(value);
+              }}
               placeholder="From"
             />
             <InputRight
               type="number"
               value={maxMileage}
-              onChange={(e) => setMaxMileage(e.target.value)}
+              onChange={(e) => {
+                const value = Math.max(e.target.value, 0);
+                setMaxMileage(value);
+              }}
               placeholder="To"
             />
           </div>

@@ -27,6 +27,7 @@ const MySelectMake = ({ selectedMake, setSelectedMake, makes }) => {
       fontSize: "18px",
       fontWeight: "500",
       lineHeight: "1.11",
+      paddingRight: "4px",
       svg: {
         color: "#121417",
       },
