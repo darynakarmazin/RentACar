@@ -1,22 +1,22 @@
 import Select from "react-select";
 
-const options = [
-  { value: null, label: "To $" },
-  ...[...Array(21).keys()].map((price) => ({
-    value: price * 10,
-    label: `$${price * 10}`,
-  })),
-];
+const MySelectMake = ({ selectedMake, setSelectedMake, makes }) => {
+  const options = [
+    { value: null, label: "Enter the text" },
+    ...makes.map((make, index) => ({
+      value: make,
+      label: make,
+    })),
+  ];
 
-const MySelect = ({ selectedPrice, setSelectedPrice }) => {
   const handleChange = (selectedOption) => {
-    setSelectedPrice(selectedOption ? selectedOption.value : null);
+    setSelectedMake(selectedOption ? selectedOption.value : "");
   };
 
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
-      width: "130px",
+      width: "224px",
       display: "block",
       border: "none",
       borderRadius: "14px",
@@ -51,7 +51,7 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
     }),
     menu: (provided) => ({
       ...provided,
-      height: "188px",
+      height: "272px",
       zIndex: 9999,
       borderRadius: "14px",
       border: "1px solid rgba(18, 20, 23, 0.05)",
@@ -60,8 +60,8 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
     }),
     menuList: (provided) => ({
       ...provided,
-      width: "130px",
-      height: "188px",
+      width: "224px",
+      height: "272px",
       zIndex: 9999,
       display: "flex",
       flexDirection: "column",
@@ -71,9 +71,13 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
       background: "#FFFFFF",
       boxShadow: "0px 4px 36px 0px rgba(0, 0, 0, 0.02)",
     }),
+    clearIndicator: (provided) => ({
+      ...provided,
+    }),
   };
 
-  const displayValue = selectedPrice !== null ? `To ${selectedPrice}$` : " ";
+  const displayValue =
+    selectedMake !== null ? { selectedMake } : "Enter the text";
 
   return (
     <div>
@@ -81,11 +85,14 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
         className="basic-single"
         styles={customStyles}
         value={
-          selectedPrice !== null
-            ? { value: selectedPrice, label: `To ${selectedPrice}$` }
+          selectedMake !== null
+            ? {
+                value: selectedMake,
+                label: selectedMake ? selectedMake : "Enter the text",
+              }
             : null
         }
-        placeholder={`To ${displayValue}$`}
+        placeholder={displayValue}
         onChange={handleChange}
         options={options}
       />
@@ -93,4 +100,4 @@ const MySelect = ({ selectedPrice, setSelectedPrice }) => {
   );
 };
 
-export default MySelect;
+export default MySelectMake;

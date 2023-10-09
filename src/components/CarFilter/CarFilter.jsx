@@ -9,6 +9,7 @@ import {
   SelectDiv,
 } from "./CarFilter.styled";
 import MySelect from "../MySelect/MySelect";
+import MySelectMake from "../MySelectMake/MySelectMake";
 
 const CarFilter = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
@@ -34,7 +35,7 @@ const CarFilter = ({ onFilterChange }) => {
       <FilterForm onSubmit={handleFormSubmit}>
         <SelectDiv>
           <Label>Car brand</Label>
-          <select
+          {/* <select
             value={selectedMake}
             onChange={(e) => setSelectedMake(e.target.value)}
           >
@@ -44,7 +45,12 @@ const CarFilter = ({ onFilterChange }) => {
                 {make}
               </option>
             ))}
-          </select>
+          </select> */}
+          <MySelectMake
+            selectedMake={selectedMake}
+            setSelectedMake={setSelectedMake}
+            makes={makes}
+          />
         </SelectDiv>
         <SelectDiv>
           <Label>Price/ 1 hour</Label>
