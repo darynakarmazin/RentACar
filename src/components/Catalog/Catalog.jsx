@@ -17,7 +17,15 @@ function Catalog() {
   const page = useSelector((state) => state.catalog.page);
   const adverts = useSelector((state) => state.catalog.adverts);
   const filters = useSelector((state) => state.catalog.filters);
-  // const allAdverts = useSelector((state) => state.catalog.allAdverts);
+  const allAdverts = useSelector((state) => state.catalog.allAdverts);
+
+  const isFilterOn = Boolean(
+    filters.selectedMake ||
+      filters.selectedPrice ||
+      filters.minMileage ||
+      filters.maxMileage
+  );
+  console.log(isFilterOn);
 
   const onFindMore = () => {
     dispatch(onNextPage());
@@ -43,7 +51,7 @@ function Catalog() {
     }
   }, [adverts.length, dispatch, page]);
 
-  const filteredAdverts = adverts.filter((adverts) => {
+  const filteredAdverts = allAdverts.filter((adverts) => {
     if (filters.selectedMake && adverts.make !== filters.selectedMake) {
       return false;
     }
@@ -68,7 +76,7 @@ function Catalog() {
         <>
           {filteredAdverts.length > 0 ? (
             <AdvertsList>
-              {filteredAdverts.map((advert) => {
+              {(isFilterOn ? filteredAdverts : adverts).map((advert) => {
                 return <AdvertItem key={advert.id} advert={advert} />;
               })}
             </AdvertsList>
