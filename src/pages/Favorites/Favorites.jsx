@@ -1,5 +1,8 @@
 import React from "react";
-import { AdvertsList } from "../../components/Catalog/Catalog.styled";
+import {
+  AdvertsList,
+  NoMatching,
+} from "../../components/Catalog/Catalog.styled";
 import AdvertItem from "../../components/AdvertItem/AdvertItem";
 import { AdvertsContainer, FavouritesContainer } from "./Favorites.styled";
 import { useSelector, useDispatch } from "react-redux";
@@ -44,7 +47,7 @@ function Favorites() {
             ))}
           </AdvertsList>
         ) : (
-          <div>No matching favorites found</div>
+          <NoMatching>Sorry, no matching favorites found</NoMatching>
         )}
       </AdvertsContainer>
       <FavoriteSideBar onFilterChange={handleFilterChange} />

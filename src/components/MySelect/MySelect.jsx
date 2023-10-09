@@ -3,8 +3,8 @@ import Select from "react-select";
 const options = [
   { value: null, label: "To $" },
   ...[...Array(21).keys()].map((price) => ({
-    value: price * 10,
-    label: `$${price * 10}`,
+    value: (price + 1) * 10,
+    label: `$${(price + 1) * 10}`,
   })),
 ];
 

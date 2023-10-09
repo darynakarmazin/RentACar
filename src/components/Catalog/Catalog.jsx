@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { AdvertsList } from "./Catalog.styled";
+import { AdvertsList, NoMatching } from "./Catalog.styled";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import ButtonLoad from "../ButtonLoad/ButtonLoad";
 import { useDispatch, useSelector } from "react-redux";
@@ -68,7 +68,7 @@ function Catalog() {
               })}
             </AdvertsList>
           ) : (
-            <div>No matching adverts found</div>
+            <NoMatching>Sorry, no matching adverts found</NoMatching>
           )}
           <ButtonLoad onFindMore={onFindMore} />
         </>
