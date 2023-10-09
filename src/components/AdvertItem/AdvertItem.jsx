@@ -88,7 +88,9 @@ function AdvertItem({ advert }) {
         </div>
         <LearnButton onClick={openModalHendler}>Learn more</LearnButton>
       </CardLi>
-      {openModal && <Modal closeModal={closeModalHendler} advert={advert} />}
+      {openModal && (
+        <Modal closeModal={closeModalHendler} advert={advert} key={advert.id} />
+      )}
     </>
   );
 }

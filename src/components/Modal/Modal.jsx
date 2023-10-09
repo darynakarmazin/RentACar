@@ -28,7 +28,7 @@ function Modal({ closeModal, advert }) {
 
   return (
     <Overlay onClick={handleOverlyClick}>
-      <ModalContainer>
+      <ModalContainer key={advert.id}>
         <CloseButton onClick={closeModal}>
           <img src={crossImg} alt="cancel" />
         </CloseButton>
@@ -53,7 +53,7 @@ function Modal({ closeModal, advert }) {
           <SecondaryTitle>Accessories and functionalities:</SecondaryTitle>
           <AccessoriesList>
             {advert.functionalities.map((functionaliti) => {
-              return <li> {functionaliti} | </li>;
+              return <li key={functionaliti}> {functionaliti} | </li>;
             })}
           </AccessoriesList>
           <SecondaryTitle>Rental Conditions: </SecondaryTitle>
