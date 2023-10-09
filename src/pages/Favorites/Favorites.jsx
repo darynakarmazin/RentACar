@@ -11,7 +11,7 @@ import FavoriteSideBar from "../../components/FavoriteSideBar/FavoriteSideBar";
 
 function Favorites() {
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favorite.items);
+  const favorites = useSelector((state) => state.favorite.favorites);
   const filters = useSelector((state) => state.catalog.filtersFavorite);
 
   const handleFilterChange = (filters) => {

@@ -45,7 +45,7 @@ function AdvertItem({ advert }) {
   window.addEventListener("keydown", handleOnClose);
 
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favorite.items);
+  const favorites = useSelector((state) => state.favorite.favorites);
 
   const toggleFavorite = () => {
     const isFavorite = favorites.some((favorite) => favorite.id === advert.id);

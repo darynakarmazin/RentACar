@@ -3,14 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const favoriteSlice = createSlice({
   name: "favorite",
   initialState: {
-    items: [],
+    favorites: [],
   },
   reducers: {
     addToFavorites: (state, action) => {
-      state.items.push(action.payload);
+      state.favorites.push(action.payload);
     },
     removeFromFavorites: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload.id);
+      state.favorites = state.favorites.filter(
+        (favorit) => favorit.id !== action.payload.id
+      );
     },
   },
 });

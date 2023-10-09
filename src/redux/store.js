@@ -14,8 +14,9 @@ import favoriteReducer from "./favorite/favoriteSlice";
 import catalogReducer from "./catalog/catalogSlice";
 
 const favoritePersistConfig = {
-  key: "favorite",
+  key: "favorites",
   storage,
+  whitelist: ["favorites"],
 };
 
 const persistedUserReducer = persistReducer(
