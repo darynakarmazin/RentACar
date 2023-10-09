@@ -7,8 +7,9 @@ import {
   onNextPage,
   setAdverts,
   firstAdverts,
+  setAllAdverts,
 } from "../../redux/catalog/catalogSlice";
-import fetchAdverts from "../../Api/fetchAdverts";
+import { fetchAdverts, fetchAllAdverts } from "../../Api/fetchAdverts";
 
 function Catalog() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function Catalog() {
   const page = useSelector((state) => state.catalog.page);
   const adverts = useSelector((state) => state.catalog.adverts);
   const filters = useSelector((state) => state.catalog.filters);
+  // const allAdverts = useSelector((state) => state.catalog.allAdverts);
 
   const onFindMore = () => {
     dispatch(onNextPage());
@@ -34,6 +36,9 @@ function Catalog() {
     if (adverts.length === 0) {
       fetchAdverts(page).then((results) => {
         dispatch(firstAdverts(results));
+      });
+      fetchAllAdverts().then((results) => {
+        dispatch(setAllAdverts(results));
       });
     }
   }, [adverts.length, dispatch, page]);
