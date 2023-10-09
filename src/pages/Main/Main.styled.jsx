@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bgImg from "./../../img/car-bgc-3.jpg";
+import bgImg from "./../../img/hero-img.jpg";
 
 export const Container = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 36px 24px;
+  padding: 24px;
   border-radius: 22px;
   margin-top: 48px;
   border: 5px solid #3470ff;

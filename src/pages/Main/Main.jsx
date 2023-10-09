@@ -5,7 +5,6 @@ import {
   HeroContent,
   NavigationLink,
 } from "./Main.styled";
-import { NavigationLinks } from "../../components/Layout/Layout.styled";
 
 function Main() {
   return (
