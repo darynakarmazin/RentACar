@@ -16,6 +16,7 @@ import {
 } from "../../redux/favorite/favoriteSlice";
 import iconAdd from "./../../img/heart-yes.svg";
 import iconRemove from "./../../img/heart-no.svg";
+import scrollLock from "scroll-lock";
 
 function AdvertItem({ advert }) {
   const [openModal, setOpenModal] = useState(false);
@@ -26,10 +27,13 @@ function AdvertItem({ advert }) {
 
   const openModalHendler = () => {
     setOpenModal(true);
+    scrollLock.disablePageScroll(document.body);
   };
 
   const closeModalHendler = () => {
     setOpenModal(false);
+    scrollLock.clearQueueScrollLocks();
+    scrollLock.enablePageScroll();
   };
 
   const handleOnClose = (e) => {

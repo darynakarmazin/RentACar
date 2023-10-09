@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.7.7",
     "redux-persist": "^6.0.0",
+    "scroll-lock": "^2.1.5",
     "styled-components": "^6.0.8",
     "web-vitals": "^2.1.4"
   },
