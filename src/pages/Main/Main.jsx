@@ -1,5 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { Container, HeroContainer, HeroContent } from "./Main.styled";
+import {
+  Container,
+  HeroContainer,
+  HeroContent,
+  NavigationLink,
+} from "./Main.styled";
 import { NavigationLinks } from "../../components/Layout/Layout.styled";
 
 function Main() {
@@ -10,6 +15,7 @@ function Main() {
           <Container className="container">
             <HeroContent>
               <h1>RentACar</h1>
+              <h2>Ukraine on Wheels, Your Way</h2>
               <p>
                 RentACar is a user-friendly application designed for companies
                 offering car rental services in Ukraine, providing seamless
@@ -25,10 +31,9 @@ function Main() {
                 rental services in Ukraine, simplifying the process from start
                 to finish.
               </p>
-              <NavigationLinks>
-                <NavLink to="/catalog">Catalog</NavLink>
-                <NavLink to="/favorites">Favorites</NavLink>
-              </NavigationLinks>
+              <NavigationLink>
+                <NavLink to="/catalog">SEARCH NOW</NavLink>
+              </NavigationLink>
             </HeroContent>
           </Container>
         </HeroContainer>
