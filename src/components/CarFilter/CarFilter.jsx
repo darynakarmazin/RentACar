@@ -8,6 +8,7 @@ import {
   SearchButton,
   SelectDiv,
 } from "./CarFilter.styled";
+import MySelect from "../MySelect/MySelect";
 
 const CarFilter = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
@@ -47,17 +48,10 @@ const CarFilter = ({ onFilterChange }) => {
         </SelectDiv>
         <SelectDiv>
           <Label>Price/ 1 hour</Label>
-          <select
-            value={selectedPrice}
-            onChange={(e) => setSelectedPrice(e.target.value)}
-          >
-            <option value="">To $</option>
-            {[...Array(21).keys()].map((price) => (
-              <option key={price} value={price * 10}>
-                ${price * 10}
-              </option>
-            ))}
-          </select>
+          <MySelect
+            selectedPrice={selectedPrice}
+            setSelectedPrice={setSelectedPrice}
+          />
         </SelectDiv>
         <SelectDiv>
           <Label>Сar mileage / km</Label>
