@@ -25,7 +25,6 @@ function Catalog() {
       filters.minMileage ||
       filters.maxMileage
   );
-  console.log(isFilterOn);
 
   const onFindMore = () => {
     dispatch(onNextPage());
