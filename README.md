@@ -18,4 +18,4 @@ RentACar is a user-friendly application designed for companies offering car rent
 
 Discover RentACar, your gateway to convenient car rental services in Ukraine. Streamline your vehicle selection process with our intuitive application.
 
-![Catalog page](https://github.com/darynakarmazin/RentACar/ascii-captcha/main/src/img/view.png)
+![Catalog page](https://github.com/darynakarmazin/RentACar/raw/main/src/img/view.png)
