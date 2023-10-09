@@ -68,7 +68,7 @@ function AdvertItem({ advert }) {
               <img src={iconRemove} alt="icon remove" />
             )}
           </Favoritebutton>
-          <CarImage src={advert.img} alt="car img" height={268} />
+          <CarImage src={advert.img} alt="car" height={268} />
         </CarWrapper>
         <div>
           <CarTitle>

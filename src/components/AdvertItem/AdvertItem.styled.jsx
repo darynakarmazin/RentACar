@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bgImg from "./../../img/placeholder.png";
+import bgImg from "./../../img/placeholder-2.png";
 
 export const CardLi = styled.li`
   display: flex;
@@ -12,9 +12,13 @@ export const CarWrapper = styled.div`
   position: relative;
   border-radius: 12px;
   background: rgba(18, 20, 23, 0.1);
-  background-image: url(${bgImg});
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url(${bgImg});
   background-size: cover;
-  background-position-x: 25%;
+  background-position-x: 45%;
   width: 274px;
   height: 268px;
   margin-bottom: 14px;

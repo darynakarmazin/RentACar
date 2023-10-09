@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bgImg from "./../../img/placeholder-2.png";
 
 export const Overlay = styled.div`
   position: fixed;
@@ -32,6 +33,13 @@ export const ModalContainer = styled.div`
 export const CarWrapper = styled.div`
   border-radius: 14px;
   background: rgba(18, 20, 23, 0.1);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url(${bgImg});
+  background-size: cover;
+  background-position-y: 45%;
   width: 461px;
   height: 248px;
   margin-bottom: 14px;
