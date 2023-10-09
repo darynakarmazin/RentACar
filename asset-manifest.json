@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RentACar/static/css/main.7f457bf4.css",
-    "main.js": "/RentACar/static/js/main.c0b4fe38.js",
+    "main.js": "/RentACar/static/js/main.c362f1ca.js",
     "static/media/car-bgc-3.jpg": "/RentACar/static/media/car-bgc-3.545b71c10ef0d8906f6d.jpg",
     "static/media/log00.png": "/RentACar/static/media/log00.62cf0a6855a36714b345.png",
     "index.html": "/RentACar/index.html",
@@ -9,10 +9,10 @@
     "static/media/heart-yes.svg": "/RentACar/static/media/heart-yes.623a3b874365d724c658e79a860ad4a4.svg",
     "static/media/x.svg": "/RentACar/static/media/x.f3cbdd58dc25ca7cbb3d242106b56fb9.svg",
     "main.7f457bf4.css.map": "/RentACar/static/css/main.7f457bf4.css.map",
-    "main.c0b4fe38.js.map": "/RentACar/static/js/main.c0b4fe38.js.map"
+    "main.c362f1ca.js.map": "/RentACar/static/js/main.c362f1ca.js.map"
   },
   "entrypoints": [
     "static/css/main.7f457bf4.css",
-    "static/js/main.c0b4fe38.js"
+    "static/js/main.c362f1ca.js"
   ]
 }
