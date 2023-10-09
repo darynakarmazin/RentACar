@@ -5,7 +5,7 @@ import {
   LogoNavLink,
   NavigationLinks,
 } from "./Layout.styled";
-import LogoImg from "./../../img/car-icon.svg";
+import LogoImg from "./../../img/log00.png";
 
 function Layout() {
   return (
@@ -13,7 +13,7 @@ function Layout() {
       <Header>
         <HeaderDiv className="container">
           <LogoNavLink to="/">
-            <img src={LogoImg} alt="Car logo" width={60} /> RentACar
+            <img src={LogoImg} alt="Car logo" height={80} />
           </LogoNavLink>
           <NavigationLinks>
             <NavLink to="/catalog">Catalog</NavLink>
