@@ -18,6 +18,9 @@ RentACar is a user-friendly application designed for companies offering car rent
 
 Discover RentACar, your gateway to convenient car rental services in Ukraine. Streamline your vehicle selection process with our intuitive application.
 
+Teclology stack [React, Redux, HTML, CSS, JS, Fetch API, styled-components, routing, redux-toolkit]
+Design https://www.figma.com/file/XhC8FSCfAkraEF5l7Hx4fL/Test?node-id=41%3A14&mode=dev
+
 Main page
 ![Main page](https://github.com/darynakarmazin/RentACar/raw/main/src/img/view.png)
 
