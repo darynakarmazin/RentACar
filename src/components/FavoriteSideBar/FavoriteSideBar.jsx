@@ -8,6 +8,8 @@ import {
   SearchButton,
   SelectDiv,
 } from "./FavoriteSideBar.styled";
+import MySelectFav from "../MySelectFav/MySelectFav";
+import MySelectMakeFav from "../MySelectMakeFav/MySelectMakeFav";
 
 const FavoriteSideBar = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
@@ -33,31 +35,18 @@ const FavoriteSideBar = ({ onFilterChange }) => {
       <FilterForm onSubmit={handleFormSubmit}>
         <SelectDiv>
           <Label>Car brand</Label>
-          <select
-            value={selectedMake}
-            onChange={(e) => setSelectedMake(e.target.value)}
-          >
-            <option value="">Select a brand</option>
-            {makes.map((make, index) => (
-              <option key={index} value={make}>
-                {make}
-              </option>
-            ))}
-          </select>
+          <MySelectMakeFav
+            selectedMake={selectedMake}
+            setSelectedMake={setSelectedMake}
+            makes={makes}
+          />
         </SelectDiv>
         <SelectDiv>
           <Label>Price/ 1 hour</Label>
-          <select
-            value={selectedPrice}
-            onChange={(e) => setSelectedPrice(e.target.value)}
-          >
-            <option value="">To $</option>
-            {[...Array(21).keys()].map((price) => (
-              <option key={price} value={price * 10}>
-                ${price * 10}
-              </option>
-            ))}
-          </select>
+          <MySelectFav
+            selectedPrice={selectedPrice}
+            setSelectedPrice={setSelectedPrice}
+          />
         </SelectDiv>
         <SelectDiv>
           <Label>Сar mileage / km</Label>
