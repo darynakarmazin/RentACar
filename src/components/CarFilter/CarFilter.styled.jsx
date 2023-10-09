@@ -5,6 +5,7 @@ export const FilterForm = styled.form`
   gap: 18px;
   align-items: flex-end;
   justify-content: center;
+  margin: 50px 0;
 `;
 
 export const SelectDiv = styled.div`

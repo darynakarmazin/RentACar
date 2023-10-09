@@ -5,6 +5,12 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #121417;
+`;
+
+export const HeaderDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const LogoNavLink = styled(NavLink)`
