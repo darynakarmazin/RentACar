@@ -24,7 +24,6 @@ export const HeroContent = styled.div`
   padding: 24px;
   border-radius: 22px;
   margin-top: 48px;
-  border: 5px solid #3470ff;
   background: rgba(255, 255, 255, 0.75);
 
   h1 {
