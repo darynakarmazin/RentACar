@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bgImg from "./../../img/placeholder.png";
 
 export const CardLi = styled.li`
   display: flex;
@@ -11,6 +12,9 @@ export const CarWrapper = styled.div`
   position: relative;
   border-radius: 12px;
   background: rgba(18, 20, 23, 0.1);
+  background-image: url(${bgImg});
+  background-size: cover;
+  background-position-x: 25%;
   width: 274px;
   height: 268px;
   margin-bottom: 14px;
