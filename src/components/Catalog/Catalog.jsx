@@ -40,10 +40,12 @@ function Catalog() {
   }, [adverts.length, dispatch, page]);
 
   useEffect(() => {
-    if (page + 1 > 4) {
+    if (page + 1 > 4 || isFilterOn) {
       setIsBtn(false);
+    } else if (!isFilterOn) {
+      setIsBtn(true);
     }
-  }, [page]);
+  }, [isFilterOn, page]);
 
   const onFindMore = () => {
     dispatch(onNextPage());
