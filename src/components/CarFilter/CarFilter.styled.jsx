@@ -69,6 +69,7 @@ export const SearchButton = styled.button`
   border-radius: 12px;
   background: #3470ff;
   padding: 14px 44px;
+  height: 52px;
   color: var(--White, #fff);
   font-family: "Manrope", sans-serif;
   font-size: 14px;
