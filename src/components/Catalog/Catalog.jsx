@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AdvertsList, NoMatching } from "./Catalog.styled";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import ButtonLoad from "../ButtonLoad/ButtonLoad";
@@ -15,6 +15,8 @@ import {
 } from "../../redux/selectors";
 
 function Catalog() {
+  const [isBnt, setIsBtn] = useState(true);
+
   const dispatch = useDispatch();
 
   const isLoading = useSelector(selectIsLoading);
@@ -36,6 +38,12 @@ function Catalog() {
       dispatch(setAdverts(page));
     }
   }, [adverts.length, dispatch, page]);
+
+  useEffect(() => {
+    if (page + 1 > 4) {
+      setIsBtn(false);
+    }
+  }, [page]);
 
   const onFindMore = () => {
     dispatch(onNextPage());
@@ -74,7 +82,11 @@ function Catalog() {
           ) : (
             <NoMatching>Sorry, no matching adverts found</NoMatching>
           )}
-          {isLoading ? <Loader /> : <ButtonLoad onFindMore={onFindMore} />}
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>{isBnt && <ButtonLoad onFindMore={onFindMore} />}</>
+          )}
         </>
       )}
     </>
