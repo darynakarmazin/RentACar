@@ -1,29 +1,46 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { setAdverts, setAllAdverts } from "./operations";
+
+const handlePending = (state) => {
+  state.isLoading = true;
+};
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 
 const catalogSlice = createSlice({
   name: "catalog",
   initialState: {
     adverts: [],
     allAdverts: [],
+    isLoading: false,
+    error: null,
     page: 1,
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(setAdverts.pending, handlePending)
+      .addCase(setAdverts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.adverts = [...state.adverts, ...action.payload];
+      })
+      .addCase(setAdverts.rejected, handleRejected)
+      .addCase(setAllAdverts.pending, handlePending)
+      .addCase(setAllAdverts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.allAdverts = [...state.allAdverts, ...action.payload];
+      })
+      .addCase(setAllAdverts.rejected, handleRejected);
+  },
   reducers: {
-    firstAdverts: (state, action) => {
-      state.adverts = [...state.adverts, ...action.payload];
-      state.page = state.page + 1;
-    },
-    setAdverts: (state, action) => {
-      state.adverts = [...state.adverts, ...action.payload];
-    },
-    setAllAdverts: (state, action) => {
-      state.allAdverts = [...state.allAdverts, ...action.payload];
-    },
     onNextPage: (state) => {
       state.page = state.page + 1;
     },
   },
 });
 
-export const { setAdverts, onNextPage, firstAdverts, setAllAdverts } =
-  catalogSlice.actions;
+export const { onNextPage } = catalogSlice.actions;
 export default catalogSlice.reducer;
