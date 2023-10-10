@@ -16,7 +16,7 @@ function Catalog() {
 
   const page = useSelector((state) => state.catalog.page);
   const adverts = useSelector((state) => state.catalog.adverts);
-  const filters = useSelector((state) => state.catalog.filters);
+  const filters = useSelector((state) => state.filters.filters);
   const allAdverts = useSelector((state) => state.catalog.allAdverts);
 
   const isFilterOn = Boolean(

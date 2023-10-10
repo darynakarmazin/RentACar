@@ -6,13 +6,13 @@ import {
 import AdvertItem from "../../components/AdvertItem/AdvertItem";
 import { AdvertsContainer, FavouritesContainer } from "./Favorites.styled";
 import { useSelector, useDispatch } from "react-redux";
-import { setFiltersFavorite } from "../../redux/catalog/catalogSlice";
+import { setFiltersFavorite } from "../../redux/filters/ filtersSlice";
 import FavoriteSideBar from "../../components/FavoriteSideBar/FavoriteSideBar";
 
 function Favorites() {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorite.favorites);
-  const filters = useSelector((state) => state.catalog.filtersFavorite);
+  const filters = useSelector((state) => state.filters.filtersFavorite);
 
   const handleFilterChange = (filters) => {
     dispatch(setFiltersFavorite(filters));

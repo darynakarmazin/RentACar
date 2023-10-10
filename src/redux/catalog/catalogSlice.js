@@ -6,18 +6,6 @@ const catalogSlice = createSlice({
     adverts: [],
     allAdverts: [],
     page: 1,
-    filters: {
-      selectedMake: "",
-      selectedPrice: "",
-      minMileage: "",
-      maxMileage: "",
-    },
-    filtersFavorite: {
-      selectedMake: "",
-      selectedPrice: "",
-      minMileage: "",
-      maxMileage: "",
-    },
   },
   reducers: {
     firstAdverts: (state, action) => {
@@ -33,27 +21,9 @@ const catalogSlice = createSlice({
     onNextPage: (state) => {
       state.page = state.page + 1;
     },
-    setFilters: (state, action) => {
-      state.filters = {
-        ...state.filters,
-        ...action.payload,
-      };
-    },
-    setFiltersFavorite: (state, action) => {
-      state.filtersFavorite = {
-        ...state.filtersFavorite,
-        ...action.payload,
-      };
-    },
   },
 });
 
-export const {
-  setAdverts,
-  onNextPage,
-  firstAdverts,
-  setFilters,
-  setFiltersFavorite,
-  setAllAdverts,
-} = catalogSlice.actions;
+export const { setAdverts, onNextPage, firstAdverts, setAllAdverts } =
+  catalogSlice.actions;
 export default catalogSlice.reducer;
