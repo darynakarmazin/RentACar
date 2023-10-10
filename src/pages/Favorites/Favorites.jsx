@@ -6,7 +6,7 @@ import {
 import AdvertItem from "../../components/AdvertItem/AdvertItem";
 import { AdvertsContainer, FavouritesContainer } from "./Favorites.styled";
 import { useSelector, useDispatch } from "react-redux";
-import { setFiltersFavorite } from "../../redux/filters/ filtersSlice";
+import { setFiltersFavorite } from "../../redux/filters/filtersSlice";
 import FavoriteSideBar from "../../components/FavoriteSideBar/FavoriteSideBar";
 import { filtersFavorite, selectFavorites } from "../../redux/selectors";
 

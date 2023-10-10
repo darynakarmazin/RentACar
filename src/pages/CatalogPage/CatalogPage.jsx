@@ -1,7 +1,7 @@
 import Catalog from "../../components/Catalog/Catalog";
 import CarFilter from "../../components/CarFilter/CarFilter";
 import { useSelector, useDispatch } from "react-redux";
-import { setFilters } from "../../redux/filters/ filtersSlice";
+import { setFilters } from "../../redux/filters/filtersSlice";
 import { selectAdverts } from "../../redux/selectors";
 
 function CatalogPage() {

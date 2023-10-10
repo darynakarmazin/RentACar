@@ -12,7 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import favoriteReducer from "./favorite/favoriteSlice";
 import catalogReducer from "./catalog/catalogSlice";
-import filtersReducer from "./filters/ filtersSlice";
+import filtersReducer from "./filters/filtersSlice";
 
 const favoritePersistConfig = {
   key: "favorites",
