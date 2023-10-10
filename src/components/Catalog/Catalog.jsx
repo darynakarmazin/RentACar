@@ -63,24 +63,18 @@ function Catalog() {
 
   return (
     <>
-      {isLoading ? (
-        <Loader />
-      ) : (
+      {adverts && (
         <>
-          {adverts && (
-            <>
-              {filteredAdverts.length > 0 ? (
-                <AdvertsList>
-                  {(isFilterOn ? filteredAdverts : adverts).map((advert) => {
-                    return <AdvertItem key={advert.id} advert={advert} />;
-                  })}
-                </AdvertsList>
-              ) : (
-                <NoMatching>Sorry, no matching adverts found</NoMatching>
-              )}
-              <ButtonLoad onFindMore={onFindMore} />
-            </>
+          {filteredAdverts.length > 0 ? (
+            <AdvertsList>
+              {(isFilterOn ? filteredAdverts : adverts).map((advert) => {
+                return <AdvertItem key={advert.id} advert={advert} />;
+              })}
+            </AdvertsList>
+          ) : (
+            <NoMatching>Sorry, no matching adverts found</NoMatching>
           )}
+          {isLoading ? <Loader /> : <ButtonLoad onFindMore={onFindMore} />}
         </>
       )}
     </>
