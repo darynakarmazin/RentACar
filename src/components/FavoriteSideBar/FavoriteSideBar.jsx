@@ -10,6 +10,7 @@ import {
 } from "./FavoriteSideBar.styled";
 import MySelectFav from "../MySelectFav/MySelectFav";
 import MySelectMakeFav from "../MySelectMakeFav/MySelectMakeFav";
+import { InputDiv, InputPl } from "../CarFilter/CarFilter.styled";
 
 const FavoriteSideBar = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
@@ -51,18 +52,28 @@ const FavoriteSideBar = ({ onFilterChange }) => {
         <SelectDiv>
           <Label>Сar mileage / km</Label>
           <div>
-            <InputLeft
-              type="number"
-              value={minMileage}
-              onChange={(e) => setMinMileage(e.target.value)}
-              placeholder="From"
-            />
-            <InputRight
-              type="number"
-              value={maxMileage}
-              onChange={(e) => setMaxMileage(e.target.value)}
-              placeholder="To"
-            />
+            <InputDiv>
+              <InputPl>From</InputPl>
+              <InputLeft
+                type="number"
+                value={minMileage}
+                onChange={(e) => {
+                  const value = Math.max(e.target.value, 0);
+                  setMinMileage(value);
+                }}
+              />
+            </InputDiv>
+            <InputDiv>
+              <InputPl>To</InputPl>
+              <InputRight
+                type="number"
+                value={maxMileage}
+                onChange={(e) => {
+                  const value = Math.max(e.target.value, 0);
+                  setMaxMileage(value);
+                }}
+              />
+            </InputDiv>
           </div>
         </SelectDiv>
         <SearchButton type="submit">Search</SearchButton>

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import makes from "./makes.json";
 import {
   FilterForm,
+  InputDiv,
   InputLeft,
+  InputPl,
   InputRight,
   Label,
   SearchButton,
@@ -51,24 +53,28 @@ const CarFilter = ({ onFilterChange }) => {
         <SelectDiv>
           <Label>Сar mileage / km</Label>
           <div>
-            <InputLeft
-              type="number"
-              value={minMileage}
-              onChange={(e) => {
-                const value = Math.max(e.target.value, 0);
-                setMinMileage(value);
-              }}
-              placeholder="From"
-            />
-            <InputRight
-              type="number"
-              value={maxMileage}
-              onChange={(e) => {
-                const value = Math.max(e.target.value, 0);
-                setMaxMileage(value);
-              }}
-              placeholder="To"
-            />
+            <InputDiv>
+              <InputPl>From</InputPl>
+              <InputLeft
+                type="number"
+                value={minMileage}
+                onChange={(e) => {
+                  const value = Math.max(e.target.value, 0);
+                  setMinMileage(value);
+                }}
+              />
+            </InputDiv>
+            <InputDiv>
+              <InputPl>To</InputPl>
+              <InputRight
+                type="number"
+                value={maxMileage}
+                onChange={(e) => {
+                  const value = Math.max(e.target.value, 0);
+                  setMaxMileage(value);
+                }}
+              />
+            </InputDiv>
           </div>
         </SelectDiv>
         <SearchButton type="submit">Search</SearchButton>
