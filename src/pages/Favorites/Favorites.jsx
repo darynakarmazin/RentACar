@@ -8,11 +8,12 @@ import { AdvertsContainer, FavouritesContainer } from "./Favorites.styled";
 import { useSelector, useDispatch } from "react-redux";
 import { setFiltersFavorite } from "../../redux/filters/ filtersSlice";
 import FavoriteSideBar from "../../components/FavoriteSideBar/FavoriteSideBar";
+import { filtersFavorite, selectFavorites } from "../../redux/selectors";
 
 function Favorites() {
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favorite.favorites);
-  const filters = useSelector((state) => state.filters.filtersFavorite);
+  const favorites = useSelector(selectFavorites);
+  const filters = useSelector(filtersFavorite);
 
   const handleFilterChange = (filters) => {
     dispatch(setFiltersFavorite(filters));

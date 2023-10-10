@@ -6,15 +6,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { onNextPage } from "../../redux/catalog/catalogSlice";
 import { setAdverts, setAllAdverts } from "../../redux/catalog/operations";
 import Loader from "../Loader/Loader";
+import {
+  selectAdverts,
+  selectAllAdverts,
+  selectFilters,
+  selectIsLoading,
+  selectPage,
+} from "../../redux/selectors";
 
 function Catalog() {
   const dispatch = useDispatch();
 
-  const isLoading = useSelector((state) => state.catalog.isLoading);
-  const page = useSelector((state) => state.catalog.page);
-  const adverts = useSelector((state) => state.catalog.adverts);
-  const filters = useSelector((state) => state.filters.filters);
-  const allAdverts = useSelector((state) => state.catalog.allAdverts);
+  const isLoading = useSelector(selectIsLoading);
+  const page = useSelector(selectPage);
+  const adverts = useSelector(selectAdverts);
+  const filters = useSelector(selectFilters);
+  const allAdverts = useSelector(selectAllAdverts);
 
   const isFilterOn = Boolean(
     filters.selectedMake ||

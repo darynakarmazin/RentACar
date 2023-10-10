@@ -17,6 +17,7 @@ import {
 import iconAdd from "./../../img/heart-yes.svg";
 import iconRemove from "./../../img/heart-no.svg";
 import scrollLock from "scroll-lock";
+import { selectFavorites } from "../../redux/selectors";
 
 function AdvertItem({ advert }) {
   const [openModal, setOpenModal] = useState(false);
@@ -45,7 +46,7 @@ function AdvertItem({ advert }) {
   window.addEventListener("keydown", handleOnClose);
 
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favorite.favorites);
+  const favorites = useSelector(selectFavorites);
 
   const toggleFavorite = () => {
     const isFavorite = favorites.some((favorite) => favorite.id === advert.id);
