@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import makes from "./makes.json";
 import {
   FilterForm,
@@ -11,12 +11,29 @@ import {
 import MySelectFav from "../MySelectFav/MySelectFav";
 import MySelectMakeFav from "../MySelectMakeFav/MySelectMakeFav";
 import { InputDiv, InputPl } from "../CarFilter/CarFilter.styled";
+import { useSelector } from "react-redux";
+import { filtersFavorite } from "../../redux/selectors";
 
 const FavoriteSideBar = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
   const [minMileage, setMinMileage] = useState("");
   const [maxMileage, setMaxMileage] = useState("");
+
+  const filters = useSelector(filtersFavorite);
+
+  useEffect(() => {
+    setSelectedMake(filters.selectedMake);
+    setSelectedPrice(filters.selectedPrice);
+    setMinMileage(filters.minMileage);
+    setMaxMileage(filters.maxMileage);
+  }, [
+    filters.maxMileage,
+    filters.minMileage,
+    filters.selectedMake,
+    filters.selectedPrice,
+    filters.setMaxMileage,
+  ]);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import makes from "./makes.json";
 import {
   FilterForm,
@@ -12,12 +12,29 @@ import {
 } from "./CarFilter.styled";
 import MySelect from "../MySelect/MySelect";
 import MySelectMake from "../MySelectMake/MySelectMake";
+import { useSelector } from "react-redux";
+import { selectFilters } from "../../redux/selectors";
 
 const CarFilter = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
   const [minMileage, setMinMileage] = useState("");
   const [maxMileage, setMaxMileage] = useState("");
+
+  const filters = useSelector(selectFilters);
+
+  useEffect(() => {
+    setSelectedMake(filters.selectedMake);
+    setSelectedPrice(filters.selectedPrice);
+    setMinMileage(filters.minMileage);
+    setMaxMileage(filters.maxMileage);
+  }, [
+    filters.maxMileage,
+    filters.minMileage,
+    filters.selectedMake,
+    filters.selectedPrice,
+    filters.setMaxMileage,
+  ]);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
