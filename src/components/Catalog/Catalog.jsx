@@ -80,7 +80,11 @@ function Catalog() {
               })}
             </AdvertsList>
           ) : (
-            <NoMatching>Sorry, no matching adverts found</NoMatching>
+            <>
+              {!isLoading && (
+                <NoMatching>Sorry, no matching adverts found</NoMatching>
+              )}
+            </>
           )}
           {isLoading ? (
             <Loader />
