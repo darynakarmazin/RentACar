@@ -82,6 +82,15 @@ export const SearchButton = styled.button`
   }
 `;
 
+export const ClearButton = styled.button`
+  background: transparent;
+  padding: 17px 0;
+
+  img {
+    width: 18px;
+  }
+`;
+
 export const Label = styled.label`
   color: #8a8a89;
   font-family: "Manrope", sans-serif;

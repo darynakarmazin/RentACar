@@ -23,6 +23,12 @@ const filtersSlice = createSlice({
         ...action.payload,
       };
     },
+    resetFilters: (state) => {
+      state.filters.selectedMake = "";
+      state.filters.selectedPrice = "";
+      state.filters.minMileage = "";
+      state.filters.maxMileage = "";
+    },
     setFiltersFavorite: (state, action) => {
       state.filtersFavorite = {
         ...state.filtersFavorite,
@@ -32,5 +38,6 @@ const filtersSlice = createSlice({
   },
 });
 
-export const { setFilters, setFiltersFavorite } = filtersSlice.actions;
+export const { setFilters, resetFilters, setFiltersFavorite } =
+  filtersSlice.actions;
 export default filtersSlice.reducer;
