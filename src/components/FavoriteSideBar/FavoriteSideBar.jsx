@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import makes from "./makes.json";
 import {
+  ClearButton,
   FilterForm,
   InputLeft,
   InputRight,
@@ -11,8 +12,9 @@ import {
 import MySelectFav from "../MySelectFav/MySelectFav";
 import MySelectMakeFav from "../MySelectMakeFav/MySelectMakeFav";
 import { InputDiv, InputPl } from "../CarFilter/CarFilter.styled";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { filtersFavorite } from "../../redux/selectors";
+import { resetFiltersFavorite } from "../../redux/filters/filtersSlice";
 
 const FavoriteSideBar = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
@@ -20,6 +22,7 @@ const FavoriteSideBar = ({ onFilterChange }) => {
   const [minMileage, setMinMileage] = useState("");
   const [maxMileage, setMaxMileage] = useState("");
 
+  const dispatch = useDispatch();
   const filters = useSelector(filtersFavorite);
 
   useEffect(() => {
@@ -46,6 +49,12 @@ const FavoriteSideBar = ({ onFilterChange }) => {
     };
 
     onFilterChange(filters);
+  };
+
+  const clearFilters = (e) => {
+    e.preventDefault();
+    console.log("clear");
+    dispatch(resetFiltersFavorite());
   };
 
   return (
@@ -94,6 +103,7 @@ const FavoriteSideBar = ({ onFilterChange }) => {
           </div>
         </SelectDiv>
         <SearchButton type="submit">Search</SearchButton>
+        <ClearButton onClick={clearFilters}>Clear</ClearButton>
       </FilterForm>
     </div>
   );

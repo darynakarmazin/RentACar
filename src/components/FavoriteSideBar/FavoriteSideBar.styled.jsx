@@ -84,6 +84,17 @@ export const SearchButton = styled.button`
   }
 `;
 
+export const ClearButton = styled.button`
+  background: transparent;
+  padding: 7px 44px;
+  width: 320px;
+  color: var(----color-primary-accent, #3470ff);
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+`;
+
 export const Label = styled.label`
   color: #8a8a89;
   font-family: "Manrope", sans-serif;
